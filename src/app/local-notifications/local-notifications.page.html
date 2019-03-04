@@ -1,0 +1,66 @@
+<ion-header>
+        <ion-title>
+            Local Notification
+        </ion-title>
+</ion-header>
+
+<ion-content padding>
+    <form (ngSubmit)="submit()">
+        <ion-list>
+            <ion-item>
+                <ion-label floating>Title</ion-label>
+                <ion-input type="text" [(ngModel)]="data.title" name="title"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Description</ion-label>
+                <ion-input type="text" [(ngModel)]="data.description" name="description"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Date</ion-label>
+                <ion-datetime displayFormat="DD/MM/YY" pickerFormat="D MMMM YYYY" [(ngModel)]="data.date" name="date"></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Time</ion-label>
+                <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="data.time" name="time"></ion-datetime>
+            </ion-item>
+        </ion-list>
+        <div padding>
+            <ion-button expand="full" round (click)="submit()">Add Notification</ion-button>
+        </div>
+    </form>
+
+
+    <div style="text-align:center;display:unset;">
+        List of Notifications:
+        <ion-row style="border-bottom: groove;">
+            <ion-col col-4>
+                <ion-label >Title</ion-label>
+            </ion-col>
+            <ion-col col-4>
+                <ion-label >Description</ion-label>
+            </ion-col>
+            <ion-col col-4>
+                <ion-label >Date</ion-label>
+            </ion-col>
+            <ion-col col-4>
+                <ion-label >Time</ion-label>
+            </ion-col>
+        </ion-row>
+        <ion-row style="border-bottom: groove;" *ngFor="let item of items | async">
+            <ion-col col-4>
+                <ion-label >{{ item.title }} </ion-label>
+            </ion-col>
+            <ion-col col-4>
+                <ion-label >{{ item.description }} </ion-label>
+            </ion-col>
+            <ion-col col-4>
+                <ion-label >{{ item.date}} </ion-label>
+            </ion-col>
+            <ion-col col-4>
+                <ion-label >{{ item.time}} </ion-label>
+            </ion-col>
+        </ion-row>
+
+    </div>
+
+</ion-content>

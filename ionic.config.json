@@ -1,0 +1,8 @@
+{
+  "name": "first-android",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "1e22dace"
+}

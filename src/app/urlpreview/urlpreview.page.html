@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>URL Preview</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding center text-center>
+
+  <ion-title> URL Preview </ion-title>
+
+  <ion-list>
+    <ion-item>
+      <ion-input placeholder="Enter URL" [(ngModel)]="urlValue" required> </ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" (click)="getPreview()"> PREVIEW </ion-button>
+
+  <br>
+  <br>
+  <p padding="30px"> Description: {{urlPreviewDetails.description}}</p>
+  <p> Family Friendly: {{urlPreviewDetails.isFamilyFriendly}}</p>
+  <a href={{urlPreviewDetails.url}}> {{urlPreviewDetails.url}} </a>
+  <br><br>
+  <img src={{urlPreviewDetails.primaryImageOfPage.contentUrl}}>
+
+</ion-content>

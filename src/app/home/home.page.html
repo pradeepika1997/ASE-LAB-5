@@ -1,0 +1,21 @@
+<ion-content padding center text-center>
+
+    <ion-title> LOGIN </ion-title>
+
+    <div style="color:red" [hidden]="invalidCredentials == null">{{invalidCredentials}}</div>
+
+    <ion-list>
+      <ion-item>
+        <ion-input placeholder="Email" [(ngModel)]="email" required> </ion-input>
+      </ion-item>
+
+     <ion-item>
+       <ion-input placeholder="Password" type="password" [(ngModel)]="password" required></ion-input>
+     </ion-item>
+   </ion-list>
+
+   <ion-button expand="full" (click)="goLogin()"> Log In </ion-button>
+
+
+  <ion-button expand="block" color="light" (click)="goRegister()"> Register</ion-button>
+</ion-content>

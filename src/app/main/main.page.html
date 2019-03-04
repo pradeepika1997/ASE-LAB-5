@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Classify Sentiment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding center text-center>
+
+  <ion-title> Classify Sentiment </ion-title>
+
+  <div color="red" [hidden]="statusCode == null">{{statusCode}}</div>
+
+  <ion-list>
+    <ion-item>
+      <ion-input placeholder="Enter Sentence" [(ngModel)]="sentimentValue" required> </ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" (click)="doClassify()"> Classify </ion-button>
+
+  <ion-grid padding-top="80px" center>
+  <ion-row style="border-bottom: groove;">
+    <ion-col col-4>
+      <ion-label > Positive: </ion-label>
+    </ion-col>
+    <ion-col col-4>
+      <ion-label > {{classifyDetails.positive}}</ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row style="border-bottom: groove;">
+    <ion-col col-4>
+      <ion-label > Negative: </ion-label>
+    </ion-col>
+    <ion-col col-4>
+      <ion-label > {{classifyDetails.negative}}</ion-label>
+    </ion-col>
+  </ion-row>
+  </ion-grid>
+
+
+</ion-content>
